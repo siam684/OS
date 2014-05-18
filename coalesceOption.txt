@@ -1,0 +1,28 @@
+tableIterator = freeSpaceTable.listIterator();
+		int indexOfnextNode, indexOfPreviousNode, indexOfCurentNode;
+		while(tableIterator.hasNext())
+		{
+			tempNode = tableIterator.next();
+			indexOfCurentNode = freeSpaceTable.indexOf(tempNode);
+			if(tableIterator.hasNext())
+			{
+				indexOfnextNode = freeSpaceTable.indexOf(tempNode)+1;
+				if(tempNode.getAddress()+tempNode.getSize()==freeSpaceTable.get(indexOfnextNode).getAddress())
+				{
+					freeSpaceTable.get(indexOfCurentNode).setSize(freeSpaceTable.get(indexOfnextNode).getSize()+
+																  freeSpaceTable.get(indexOfCurentNode).getSize());
+					freeSpaceTable.remove(indexOfnextNode);
+				}				
+			}
+			
+			if(tableIterator.hasPrevious())
+			{
+				indexOfPreviousNode = freeSpaceTable.indexOf(tempNode)-1;
+				if(freeSpaceTable.get(indexOfPreviousNode+1).getAddress()+freeSpaceTable.get(indexOfPreviousNode+1).getSize()==tempNode.getAddress())
+				{
+					freeSpaceTable.get(indexOfPreviousNode).setSize(freeSpaceTable.get(indexOfPreviousNode).getSize()+
+							  									    freeSpaceTable.get(indexOfCurentNode).getSize());
+					freeSpaceTable.remove(indexOfCurentNode);
+				}
+			}
+		}

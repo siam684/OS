@@ -1,0 +1,40 @@
+<BASE HREF="file:///C|/Shalvi/cis704/sosjava.html">
+
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1252">
+<META NAME="Generator" CONTENT="Microsoft Word 97">
+<TITLE>OPERATING SYSTEM PROJECT IN JAVA</TITLE>
+</HEAD>
+<BODY>
+
+<B><P ALIGN="CENTER">OPERATING SYSTEM PROJECT IN JAVA</P>
+<FONT SIZE=2></B><P ALIGN="CENTER">&nbsp;</P>
+</FONT><FONT FACE="Arial" SIZE=2><P>Since Java is a totally object-oriented language, all method calls whose definitions are outside the calling class must be preceded by the object name, or the class name if the method is static.  In this case, all methods you will need to call are static.  Since the class in</FONT><FONT SIZE=2> </FONT><FONT FACE="Courier New" SIZE=2>'sos.class'</FONT><FONT SIZE=2> </FONT><FONT FACE="Arial" SIZE=2>is called</FONT><FONT SIZE=2> </FONT><FONT FACE="Courier New" SIZE=2>sos</FONT><FONT SIZE=2> </FONT><FONT FACE="Arial" SIZE=2>(the public class must be the same as the file name), you will have to call my methods in the following way:</P>
+</FONT><FONT SIZE=2>
+</FONT><FONT FACE="Courier New" SIZE=2><P>sos.ontrace();</P>
+<P>sos.offtrace();</P>
+<P>sos.siodisk(...);</P>
+<P>sos.siodrum(...);</P>
+
+</FONT><FONT FACE="Arial" SIZE=2><P>My main calls some of your methods in a similar way.  Therefore, you must call your public class</FONT><FONT SIZE=2> </FONT><FONT FACE="Courier New" SIZE=2>os</FONT><FONT SIZE=2> </FONT><FONT FACE="Arial" SIZE=2>and therefore your file must be called</FONT><FONT SIZE=2> </FONT><FONT FACE="Courier New" SIZE=2>'os.java'</FONT><FONT SIZE=2>.  </FONT><FONT FACE="Arial" SIZE=2>You should use the following headers:</P>
+</FONT><FONT SIZE=2>
+</FONT><FONT FACE="Courier New" SIZE=2><P>public static void Crint (int []a, int []p)</P>
+<P>public static void Dskint (int []a, int []p)</P>
+<P>public static void Drmint (int []a, int []p)</P>
+<P>public static void Tro (int []a, int []p)</P>
+<P>public static void Svc (int []a, int []p)</P>
+</FONT><FONT SIZE=2>
+</FONT><FONT FACE="Arial" SIZE=2><P>The first variable,</FONT><FONT SIZE=2> </FONT><FONT FACE="Courier New" SIZE=2>'a'</FONT><FONT FACE="Arial" SIZE=2> is declared as an array with only one element, since basic types may not be changed within a method.  Access this value as</FONT><FONT SIZE=2> </FONT><FONT FACE="Courier New" SIZE=2>'a[0]'</FONT><FONT SIZE=2>. </FONT><FONT FACE="Arial" SIZE=2> Any other methods you write that are called from within these will also have to be</FONT><FONT SIZE=2> </FONT><FONT FACE="Courier New" SIZE=2>static</FONT><FONT SIZE=2>.</P>
+
+</FONT><FONT FACE="Arial" SIZE=2><P>Since</FONT><FONT SIZE=2> </FONT><FONT FACE="Courier New" SIZE=2>sos</FONT><FONT SIZE=2> </FONT><FONT FACE="Arial" SIZE=2>does not create an object of type</FONT><FONT SIZE=2> </FONT><FONT FACE="Courier New" SIZE=2>os</FONT><FONT SIZE=2> </FONT><FONT FACE="Arial" SIZE=2>and call its constructor, you must call your constructor inside</FONT><FONT SIZE=2> </FONT><FONT FACE="Courier New" SIZE=2>startup</FONT><FONT FACE="Arial" SIZE=2>, so that everything can be initialized.  If you would like to write an interface, it should be called here, too.</P>
+</FONT><FONT SIZE=2>
+</FONT><FONT FACE="Arial" SIZE=2><P>To run the program from the command line:</P>
+</FONT>
+<ol><FONT FACE="Arial" SIZE=2><li>Copy sos.class, jobtype.class and Format.class into your directory.
+<li></FONT><FONT FACE="Courier New" SIZE=2>javac *.java&#9;</FONT><FONT FACE="Arial" SIZE=2>(compile all <I>your</I> necessary Java files)
+</FONT><FONT FACE="Arial" SIZE=2><li></font><FONT FACE="Courier New" SIZE=2>java sos&#9;&#9;</FONT><FONT FACE="Arial" SIZE=2>(run <I>my</I> program)
+</FONT></ol>
+<FONT SIZE=2>
+</FONT><FONT FACE="Arial" SIZE=2><P>The</FONT><FONT SIZE=2> </FONT><FONT FACE="Courier New" SIZE=2>'sos.class'</FONT><FONT SIZE=2> </FONT><FONT FACE="Arial" SIZE=2>file and other .class files may be used in DOS, Windows, UNIX and MacOS, since the Java Virtual Machine will interpret the bytecode in the correct way for that machine.  Java's type sizes are the same for all machines (i.e. an</FONT><FONT SIZE=2> </FONT><FONT FACE="Courier New" SIZE=2>int</FONT><FONT SIZE=2> </FONT><FONT FACE="Arial" SIZE=2>is the same size on the PC as on a Sun), so you don't have to change everything to</FONT><FONT SIZE=2> </FONT><FONT FACE="Courier New" SIZE=2>long</FONT><FONT SIZE=2> </FONT><FONT FACE="Arial" SIZE=2>if you will be doing it on a PC.</P></FONT></BODY>
+</HTML>

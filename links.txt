@@ -1,0 +1,12 @@
+http://www.tutorialspoint.com/java/util/linkedlist_listiterator.htm
+http://ocw.mit.edu/courses/economics/14-01sc-principles-of-microeconomics-fall-2011/unit-1-supply-and-demand/introduction-to-microeconomics/
+http://pages.cs.wisc.edu/~sschang/OS-Qual/memory/Memory.htm
+http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.91.5556&rep=rep1&type=pdf
+http://www.programcreek.com/2013/01/sort-linkedlist-of-user-defined-objects-in-java/
+
+touch README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/siam684/osproject.git
+git push -u origin master
