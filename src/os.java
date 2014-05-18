@@ -183,6 +183,11 @@ public class os
 		//else
 		//halt cpu -- a[]=2;
 		//leave each interrupt with return statement?
+		
+		if(readyQueue.size()>0)
+		{
+			
+		}
 	}
 	
 	
@@ -239,19 +244,19 @@ public class os
 						{
 							if(e.getPriority()>f.getPriority()&&e.getJobSize()<f.getJobSize())
 							{
-								freeSpaceTable.removeFirstOccurrence(new FreeSpaceNode(f.getMemLoc(),f.getJobSize()));
+								//freeSpaceTable.removeFirstOccurrence(new FreeSpaceNode(f.getMemLoc(),f.getJobSize()));
+								sos.siodrum(f.getJobNum(),f.getJobSize(),f.getMemLoc(),1);
+								MemoryManager.free(f.getMemLoc(),f.getJobSize(), freeSpaceTable);
+								memAddress = MemoryManager.allocate(e.getJobSize(), freeSpaceTable);
+								e.setMemLoc(memAddress);
+								sos.siodrum(e.getJobNum(),e.getJobSize(),e.getMemLoc(),0);
+								f.setMemLoc(-2);								
 							}
 						}
-					}
-					
-					
+					}					
 				}
-				
 			}
-			
-			
 		}
-		
 	}
 }
 
