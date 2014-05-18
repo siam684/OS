@@ -1,0 +1,31 @@
+/* 
+ * siodisk: start disk transfer
+ * 		void siodisk(int jobNum)
+ * 
+ * siodrum: start a drum transfer (swap)
+ * 		void siodrum(int jobnum,int jobsize, int startcoreaddress(mem),int transfer direction)
+ * 				direction:0= drum to mem, 1= mem to drum
+ * 
+ * 0. os sleeping
+ * 1. iterrupt happens -  interrupts are disabled
+ * 2. os keeps track of interrupted job (bookkeeping)
+ * 3. os handles events signaled by interrupts (differs per interrupt)
+ * 4. os schedules next job --dispatcher
+ * 5. os dispatches job --dispatcher
+ * 6. os sleeps
+ * 
+ * before return to os from each interrupt
+ * 	- check if there is room in memory to swap in a new job from drum
+ *  - check if jobs ready to run, if so schedule the job
+ *  
+ *  if a job has outstanding disk i/o requests and no requests are being serviced by disk(job in i/o queue) os can decided to leave 
+ *  the job in meory or swap it out to drum but before os inituates an siodisk for any of the jobs i/o requests, the job must be in memory
+ *  
+ *  bookeeping: 
+ *  	- when interrupt happens a running job will be terminated, it is the job of the os to make sure that information about the job that was
+ *  	running is not lost
+ *  	- must be done at the beginning of each interrupt handler
+ *  	- os must schedule a job to run on the cpu before returning to sos
+ *  
+ *  when job is doing i/o it must be in memeory
+ * */
