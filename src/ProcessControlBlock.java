@@ -3,8 +3,20 @@
 public class ProcessControlBlock implements Comparable<ProcessControlBlock>
 {
 	//int p[];
-	int memAddress, jobNum, jobSize, currentTime, priority, maxCpuTime, state;
+	int memAddress, jobNum, jobSize, timeIn, priority, maxCpuTime, state, timeOnCpu;	
 	boolean isDoingIO, killBit, isBlocked; //kill bit used if job is to be terminated but still doing i/o
+	
+	public int getTimeOnCpu() 
+	{
+		return timeOnCpu;
+	}
+
+	public void setTimeOnCpu(int timeOnCpu) 
+	{
+		this.timeOnCpu = timeOnCpu;
+	}
+
+	
 	
 	ProcessControlBlock()
 	{
@@ -16,24 +28,25 @@ public class ProcessControlBlock implements Comparable<ProcessControlBlock>
 		isBlocked = false;
 		this.jobNum = 0;
 		this.jobSize = 0;
-		this.currentTime = 0;
+		this.timeIn = 0;
 		this.priority = 0;
 		this.maxCpuTime = 0;
 	}
 	
-	ProcessControlBlock(int jobNum, int jobSize, int currentTime, int priority, int maxCpuTime)
+	ProcessControlBlock(int jobNum, int priority, int jobSize, int maxCpuTime, int timeIn, int state,int timeOnCpu)
 	{
 		//p = null;
 		memAddress = -1;
-		state = 0;
+		this.state = state;
 		isDoingIO = false;
 		killBit = false;
 		isBlocked = false;
 		this.jobNum = jobNum;
 		this.jobSize = jobSize;
-		this.currentTime = currentTime;
+		this.timeIn = timeIn;
 		this.priority = priority;
 		this.maxCpuTime = maxCpuTime;
+		this.timeOnCpu = timeOnCpu;
 	}
 	
 	void setState(int state)
@@ -95,9 +108,9 @@ public class ProcessControlBlock implements Comparable<ProcessControlBlock>
 		this.jobSize = jobSize;
 	}
 	
-	void setCurrentTime(int currentTime)
+	void setTimeIn(int timeIn)
 	{
-		this.currentTime = currentTime;
+		this.timeIn = timeIn;
 	}
 	
 	void setPriority(int priority)
@@ -120,9 +133,9 @@ public class ProcessControlBlock implements Comparable<ProcessControlBlock>
 		return jobSize;
 	}
 	
-	int getCurrentTime()
+	int getTimeIn()
 	{
-		return currentTime;
+		return timeIn;
 	}
 	
 	int getPriority()

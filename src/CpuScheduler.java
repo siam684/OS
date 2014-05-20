@@ -12,11 +12,11 @@ public class CpuScheduler
 	{
 		int index;
 		Collections.sort(readyQueue);	
-		index =  readyQueue.indexOf(readyQueue.getFirst());
-		for(ProcessControlBlock e: readyQueue)
-		{
-			e.setPriority(e.getPriority()+1);
-		}
+		index =  readyQueue.indexOf(readyQueue.peekFirst());
+//		for(ProcessControlBlock e: readyQueue)
+//		{
+//			e.setPriority(e.getPriority()+1);
+//		}
 		return index;
 	}
 	

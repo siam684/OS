@@ -1,0 +1,23 @@
+//						for(ProcessControlBlock f:jobTable)
+//						{
+//							/*if other job is not waiting on i/o, doing i/o, using cpu, 
+//							 *	if the new jobs prioirity is higher than other job and new jobs size is less than or equal to other job
+//							 *		move it to the drum and give the memory to the new job*/
+//							if(!f.isBlocked&&e.memAddress>=0&&!f.isDoingIO&&f.getState()!=3)
+//							{
+//								if(e.getPriority()>f.getPriority()&&e.getJobSize()<=f.getJobSize())
+//								{
+//									//freeSpaceTable.removeFirstOccurrence(new FreeSpaceNode(f.getMemLoc(),f.getJobSize()));
+//									sos.siodrum(f.getJobNum(),f.getJobSize(),f.getMemLoc(),1);
+//									MemoryManager.free(f.getMemLoc(),f.getJobSize(), freeSpaceTable);								
+//									f.setMemLoc(-2);
+//									f.setState(1);									
+//									memAddress = MemoryManager.allocate(e.getJobSize(), freeSpaceTable);
+//									e.setMemLoc(memAddress);
+//									readyQueue.add(e);
+//									e.setState(2);
+//									sos.siodrum(e.getJobNum(),e.getJobSize(),e.getMemLoc(),0);
+//									drumWorking = true;
+//								}
+//							}
+//						}	

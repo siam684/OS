@@ -29,3 +29,75 @@
  *  
  *  when job is doing i/o it must be in memeory
  * */
+
+
+
+JOBTABLE
+
+Job#  Size  Time CPUTime MaxCPU  I/O's Priority Blocked  Latched InCore Term
+          Arrived  Used  Time   Pending
+
+
+   4   10    7300   1000   3500    1      1       yes     no      yes     no 
+   5   30    7330      0     14    0      2       no      no      no      no 
+   6   47    7340      0  65000    0      5       no      no      no      no 
+   7   27    7359      0    100    0      1       no      no      no      no 
+
+
+Ready Queue:
+Job Num: 4
+Size: 10
+max cpu time: 3500
+mem location: 0
+priority: 1
+state : 3
+time in: 7300
+time on cpu: 17
+is doing io: false
+is blocked: false
+
+
+Job Table:
+
+Job Num: 4
+Size: 10
+max cpu time: 3500
+mem location: 0
+priority: 1
+state : 3
+time in: 7300
+time on cpu: 17
+is doing io: false
+is blocked: false
+
+Job Num: 5
+Size: 30
+max cpu time: 14
+mem location: -1
+priority: 2
+state : 1
+time in: 7330
+time on cpu: 11
+is doing io: fJOBNO:  4
+alse
+is blocked: false
+Job Num: 6
+Size: 47
+max cpu time: 65000
+mem location: -1
+priority: 5
+state : 1
+time in: 7340
+time on cpu: 20
+is doing io: false
+is blocked: false
+
+
+
+p[ 0]: 0
+p[ 1]: 7
+p[ 2]: 0
+p[ 3]: 10
+p[ 4]: 1
+p[ 5]: 8315
+

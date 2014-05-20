@@ -41,6 +41,8 @@ public class MemoryManager
 				address = -1;
 			}
 		}
+		System.out.println("Address of job: "+ address);
+		print(freeSpaceTable);
 		return address;
 		
 	}
@@ -70,7 +72,7 @@ public class MemoryManager
 	private static int memSplit(int sizeOfJob, int index,LinkedList<FreeSpaceNode> freeSpaceTable)
 	{
 		tempNode = freeSpaceTable.remove(index);		
-		freeSpaceTable.add(new FreeSpaceNode(tempNode.getAddress()+sizeOfJob,tempNode.getSize()-sizeOfJob));
+		freeSpaceTable.add(new FreeSpaceNode((tempNode.getAddress())+sizeOfJob,tempNode.getSize()-sizeOfJob));
 		return tempNode.getAddress();
 	}
 	
